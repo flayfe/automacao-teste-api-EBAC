@@ -31,10 +31,27 @@ describe("Testes da API ServeRest - Funcionalidade Usuários", () => {
 
   it("Deve validar um usuário com email inválido", () => {
     let nome = faker.name.firstName();
-    let email = "fulano@qa.com";
+    let email = "flavia#ebac";
     let psw = faker.internet.password();
 
     cy.cadastrarUsuario(nome, email, psw, "true").then((response) => {
+      expect(response.status).to.equal(400);
+      expect(response.body.email).to.equal("email deve ser um email válido");
+    });
+  });
+
+  it("Deve validar um usuário com email repetido", () => {
+    let nome1 = faker.name.firstName();
+    let email1 = "novodenovo@ebac.com";
+    let psw1 = faker.internet.password();
+
+    cy.cadastrarUsuario(nome1, email1, psw1, "true")
+    
+    let nome2 = faker.name.firstName();
+    let email2 = "novodenovo@ebac.com";
+    let psw2 = faker.internet.password();
+
+    cy.cadastrarUsuario(nome2, email2, psw2, "true").then((response) => {
       expect(response.status).to.equal(400);
       expect(response.body.message).to.equal("Este email já está sendo usado");
     });
