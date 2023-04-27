@@ -12,7 +12,7 @@ pipeline {
             sh 'npm install'
             }
         }
-        stage('Subir Serverest localmente') {
+        stage('Subir Serverest e Realizar testes') {
             steps {
             sh 'NO_COLOR=1 npm run cy:run-ci'
             }
