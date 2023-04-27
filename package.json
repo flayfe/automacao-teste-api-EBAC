@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serverest": "npx serverest",
-    "teste": "npx cypress open",
+    "teste": "npx cypress run",
     "cy:run-ci": "start-server-and-test serverest http://localhost:3000/usuarios teste"
   },
   "keywords": [],
