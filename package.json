@@ -6,7 +6,7 @@
   "scripts": {
     "serverest": "npx serverest",
     "teste": "npx cypress open",
-    "cy:run-ci": "start-server-and-test serverest http://localhost:3000/usuarios teste"
+    "cy:run-ci": "start-server-and-test serverest http://localhost:3500/usuarios teste"
   },
   "keywords": [],
   "author": "",
