@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clonar o repositorio') {
             steps {
-            git branch: 'main', url: 'https://github.com/flayfe/automacao-teste-api-EBAC.git'
+            git branch: 'master', url: 'https://github.com/flayfe/automacao-teste-api-EBAC.git'
             }
         }
         stage('Instalar dependencias') {
