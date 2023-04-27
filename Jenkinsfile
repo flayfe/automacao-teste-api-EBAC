@@ -14,12 +14,7 @@ pipeline {
         }
         stage('Subir Serverest localmente') {
             steps {
-            sh 'npx serverest'
-            }
-        }
-        stage('Executar testes') {
-            steps {
-            sh 'NO_COLOR=1 npx cypress open'
+            sh 'NO_COLOR=1 npm run cy:run-ci'
             }
         }
     }
